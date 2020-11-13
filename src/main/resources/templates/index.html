@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title> </title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Hello your link:</h1>
+<tr th:each="link : ${arrayLink}">
+    <td><p th:text="${link.realLink}">Link</p></td>
+    <td><p th:text="${link.description}">Description</p></td>
+</tr>
+
+
+<h1>Input new link</h1>
+<form action="/" th:action="@{/}" method="post">
+    <input type="text" name="link" th:name="@{link}">
+    <input type="text" name="description" th:name="@{description}">
+    <input type="submit" placeholder="Send">
+</form>
+
+<!--<h1>Edit Link</h1>-->
+<!--<form action="/" th:action="@{}" method="post">-->
+<!--    <input type="text" name="oldLink" th:name="@{oldLink}" placeholder="input old link">-->
+<!--    <input type="text" name="newLink" th:name="@{newLink}" placeholder="set new link">-->
+<!--    <input type="text" name="description" th:name="@{description}" placeholder="set description (optional)">-->
+<!--    <input type="submit" placeholder="Send">-->
+<!--</form>-->
+
+</body>
+</html>
